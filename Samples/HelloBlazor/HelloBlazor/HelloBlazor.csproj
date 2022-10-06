@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Eto.Forms" Version="2.7.1" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="../../../Eto.Blazor/Eto.Blazor.csproj" />
+    </ItemGroup>
+
+</Project>

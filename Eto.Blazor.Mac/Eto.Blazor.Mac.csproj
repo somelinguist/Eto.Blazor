@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0-macos</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <OutputType>Library</OutputType>
+        <Nullable>enable</Nullable>
+        <SupportedOSPlatformVersion>10.15</SupportedOSPlatformVersion>
+        <RuntimeIdentifiers>osx-x64;osx-arm64</RuntimeIdentifiers>
+        <MacBuildBundle>False</MacBuildBundle>
+        <_AppResourcesPath>Resources</_AppResourcesPath>
+        <_BundleIdentifier>com.mycompany.EtoBlazorMac</_BundleIdentifier>
+        <PackageId>Eto.Blazor.Mac</PackageId>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="..\Eto.Blazor\Eto.Blazor.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Eto.Platform.macOS" Version="2.7.1" />
+    </ItemGroup>
+</Project>

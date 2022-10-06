@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0-macos</TargetFramework>
+        <SupportedOSPlatformVersion>10.15</SupportedOSPlatformVersion>
+        <RuntimeIdentifiers>osx-x64;osx-arm64</RuntimeIdentifiers>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\HelloBlazor\HelloBlazor.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Eto.Platform.macOS" Version="2.7.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Eto.Blazor.Mac/Eto.Blazor.Mac.csproj"/>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <ApplicationId>com.example.HelloBlazor</ApplicationId>
+    </PropertyGroup>
+    
+</Project>

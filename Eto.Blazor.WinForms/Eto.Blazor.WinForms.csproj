@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+        <OutputType>Library</OutputType>    
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  
+  <ItemGroup>
+        <ProjectReference Include="..\Eto.Blazor\Eto.Blazor.csproj" />
+  </ItemGroup>
+  
+
+  <ItemGroup>
+    <PackageReference Include="Eto.Platform.Windows" Version="2.7.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.WindowsForms" Version="6.0.540" />
+  </ItemGroup>
+
+</Project>
