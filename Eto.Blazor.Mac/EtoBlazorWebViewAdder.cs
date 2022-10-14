@@ -1,5 +1,6 @@
 using Eto.Blazor;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Eto.Blazor.Mac
 {
@@ -7,6 +8,7 @@ namespace Eto.Blazor.Mac
     {
         void IEtoBlazorWebViewAdder.AddBlazorWebView(IServiceCollection services)
         {
+            services.TryAddSingleton(new BlazorWebViewDeveloperTools { Enabled = false });
             services.AddEtoDefaultBlazorWebView();
         }
 
