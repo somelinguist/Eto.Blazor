@@ -9,5 +9,15 @@ namespace Eto.Blazor.Mac
         {
             services.AddEtoDefaultBlazorWebView();
         }
+
+        public IServiceCollection AddBlazorWebViewDeveloperTools(IServiceCollection services)
+        {
+            return services.AddSingleton<BlazorWebViewDeveloperTools>(new BlazorWebViewDeveloperTools { Enabled = true });
+        }
+    }
+
+    internal class BlazorWebViewDeveloperTools
+    {
+        public bool Enabled { get; set; } = false;
     }
 }

@@ -10,5 +10,10 @@ namespace Eto.Blazor.Wpf
         {
             services.AddWpfBlazorWebView();
         }
+
+        public IServiceCollection AddBlazorWebViewDeveloperTools(IServiceCollection services)
+        {
+            return services.AddBlazorWebViewDeveloperTools();
+        }
     }
 }

@@ -52,10 +52,14 @@ namespace Eto.Blazor.Mac
         
         public wk.WKWebViewConfiguration Config { get; set; } = new wk.WKWebViewConfiguration();
         
+		internal BlazorWebViewDeveloperTools? DeveloperTools { get; set; }// => Services!.GetRequiredService<BlazorWebViewDeveloperTools>();
+
         [SupportedOSPlatform("macos12.0")]
         protected override wk.WKWebView CreateControl()
         {
-            
+			
+
+
             Callback.OnBlazorWebViewInitializing(Widget, new BlazorWebViewInitializingEventArgs()
             {
                 // Configuration = Config
@@ -89,6 +93,10 @@ namespace Eto.Blazor.Mac
         public override void OnLoadComplete(EventArgs e)
         {
 	        base.OnLoadComplete(e);
+			// TODO: Is this the correct place to call this?
+			// It has to be called after Services has been set, which unfortunately doesn't work in CreateControl()
+			DeveloperTools = Services!.GetRequiredService<BlazorWebViewDeveloperTools>();
+            Config.Preferences.SetValueForKey(NSObject.FromObject(DeveloperTools.Enabled), new NSString("developerExtrasEnabled"));
 	        StartWebViewCoreIfPossible();
         }
 

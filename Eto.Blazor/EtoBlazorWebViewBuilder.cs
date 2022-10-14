@@ -15,5 +15,7 @@ namespace Eto.Blazor
     public interface IEtoBlazorWebViewAdder
     {
         void AddBlazorWebView(IServiceCollection services);
+
+        IServiceCollection AddBlazorWebViewDeveloperTools(IServiceCollection services);
     }
 }

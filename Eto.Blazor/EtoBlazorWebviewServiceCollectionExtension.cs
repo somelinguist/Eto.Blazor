@@ -13,7 +13,7 @@ namespace Microsoft.Extensions.DependencyInjection
             var platform = Platform.Instance;
             if (platform == null)
                 throw new InvalidOperationException("Platform instance is null. Have you created your application?");
-            var blazorAdder = platform.Create<IEtoBlazorWebViewAdder>();
+            var blazorAdder = platform.CreateShared<IEtoBlazorWebViewAdder>();
             if (blazorAdder == null)
                 throw new InvalidOperationException("Type for 'IEtoBlazorWebViewAdder' could not be found in this platform");
             blazorAdder.AddBlazorWebView(services);
@@ -25,6 +25,18 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddBlazorWebView();
             //services.TryAddSingleton(new BlazorWebViewDeveloperTools { Enabled = false });
             services.TryAddSingleton<EtoBlazorMarkerService>();
+        }
+
+        public static IServiceCollection AddEtoBlazorWebViewDeveloperTools(this IServiceCollection services)
+        {
+            var platform = Platform.Instance;
+            if (platform == null)
+                throw new InvalidOperationException("Platform instance is null. Have you created your application?");
+            var blazorAdder = platform.CreateShared<IEtoBlazorWebViewAdder>();
+            if (blazorAdder == null)
+                throw new InvalidOperationException("Type for 'IEtoBlazorWebViewAdder' could not be found in this platform");
+            
+            return blazorAdder.AddBlazorWebViewDeveloperTools(services);
         }
     }
 }

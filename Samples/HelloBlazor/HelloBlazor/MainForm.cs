@@ -16,6 +16,11 @@ namespace HelloBlazor
             var services = new ServiceCollection();
             services.AddEtoBlazorWebView();
 
+#if DEBUG
+            // NOTE: the Add**Eto**BlazorWebViewDeveloperTools()
+            services.AddEtoBlazorWebViewDeveloperTools();
+#endif
+
             var blazorWebView = new BlazorWebView();
             blazorWebView.HostPage = "wwwroot/index.html";
             blazorWebView.Services = services.BuildServiceProvider();

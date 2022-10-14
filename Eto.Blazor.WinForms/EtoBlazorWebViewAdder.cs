@@ -10,5 +10,10 @@ namespace Eto.Blazor.WinForms
         {
             services.AddWindowsFormsBlazorWebView();
         }
+
+        public IServiceCollection AddBlazorWebViewDeveloperTools(IServiceCollection services)
+        {
+            return services.AddBlazorWebViewDeveloperTools();
+        }
     }
 }
