@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+    <PropertyGroup>
+      <TargetFramework>net6.0-macos</TargetFramework>
+      <OutputType>Exe</OutputType>
+      <SupportedOSPlatformVersion>10.14</SupportedOSPlatformVersion>
+      <RuntimeIdentifiers>osx-x64;osx-arm64</RuntimeIdentifiers>
+    </PropertyGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\HelloBolero\HelloBolero.fsproj" />
+    </ItemGroup>
+  
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Eto.Blazor.Mac/Eto.Blazor.Mac.csproj"/>
+    </ItemGroup>
+  
+    <ItemGroup>
+      <Compile Include="Program.fs" />
+    </ItemGroup>
+      
+    <ItemGroup>
+      <PackageReference Include="Eto.Platform.macOS" Version="2.7.1" />
+    </ItemGroup>
+  
+    <PropertyGroup>
+      <ApplicationId>com.example.HelloBolero</ApplicationId>
+    </PropertyGroup>
+  </Project>

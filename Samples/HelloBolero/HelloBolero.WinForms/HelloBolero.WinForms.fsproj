@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+      <OutputType>WinExe</OutputType>
+      <TargetFramework>net6.0-windows</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HelloBolero\HelloBolero.fsproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Eto.Blazor.WinForms\Eto.Blazor.WinForms.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="Program.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Eto.Platform.Windows" Version="2.7.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="wwwroot\**\*">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+  </Project>
